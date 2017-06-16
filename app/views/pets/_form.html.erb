@@ -1,0 +1,15 @@
+
+<div class="container">
+  <div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+<%= simple_form_for @pet do |p| %>
+  <%= p.input :name %>
+  <%= p.input :species, as: :select, collection: Pet::CATEGORIES, include_blank: "select a species" %>
+  <%= p.input :found_on %>
+  <%= p.input :last_seen_at %>
+  <%= p.input :fav_colour %>
+  <%= p.submit %>
+<% end %>
+</div>
+</div>
+</div>

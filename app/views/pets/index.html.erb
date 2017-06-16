@@ -1,0 +1,18 @@
+<h1 class="text-center">Lost Pets</h1>
+<div class="container">
+  <div class="row">
+    <%= link_to 'Add pet', new_pet_path%>
+    <% @pets.each do |pet| %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h2><%= link_to pet.name, pet_path(pet) %></h2>
+      <p><%= pet.species %></p>
+      <p><%= pet.found_on %></p>
+      <p><%= pet.last_seen_at %></p>
+      <p><%= pet.fav_colour %></p>
+      <%= link_to 'update', edit_pet_path(pet), { class: 'btn btn-primary' }%>
+      <%= link_to 'remove', pet_path(pet), method: :delete, class: 'btn btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
